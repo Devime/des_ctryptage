@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "des_ctryptage"
