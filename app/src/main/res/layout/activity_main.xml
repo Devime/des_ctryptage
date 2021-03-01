@@ -30,4 +30,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/B1sym" />
 
+    <Button
+        android:id="@+id/B1Cesar"
+        android:layout_width="380dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="16dp"
+        android:text="Cesar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/B1PlayFair" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

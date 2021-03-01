@@ -1,6 +1,33 @@
 package com.example.des_ctryptage.com.example.des_ctryptage
 
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import com.example.des_ctryptage.R
 class cesar {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_cesar)
+
+        var Btchiffrement = findViewById<Button>(R.id.cesarBtcrypter)
+        var Btdechiffrement = findViewById<Button>(R.id.cesarBtdecrypter)
+        var txtin = findViewById<EditText>(R.id.cesartxin)
+        var txtout = findViewById<TextView>(R.id.cesartxout)
+
+        Btchiffrement.setOnClickListener {
+            var out = crypter(txtin.text.toString())
+            println(txtin.text.toString())
+            txtout.text = out
+        }
+
+        Btdechiffrement.setOnClickListener {
+            var out = decrypter(txtin.text.toString())
+            println(txtin.text.toString())
+            txtout.text = out
+        }
+
+    }
     var alphabet=charArrayOf('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
     //fonction pour crypter
     fun crypter(n: Int, message_entre: String): String {
