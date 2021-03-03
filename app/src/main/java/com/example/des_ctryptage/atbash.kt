@@ -34,20 +34,21 @@ class atbash : AppCompatActivity() {
 
     private fun chiffrement(txt: String): String {
         val out = ""
-        var c:Int=0
+        var c: Int = 0
         val sb = StringBuilder()
 
         for (i in txt.indices) {
             if (!txt[i].equals(" "))
                 println(txt[i])
-                c = txt[i].toByte().toInt()
-                println("******************************$c")
-                c = (25 - (c - 97)) + 97
-                println("******************************$c")
-                val char = c.toChar().toString()
-                sb.append(char)
-                println("=======================$char")
-                println("-----------------${sb.toString()}")
+            c = txt[i].toByte().toInt()
+            println("******************************$c")
+            c = (126 - c )+33
+            //c = (25 - (c - 97)) + 97
+            println("******************************$c")
+            val char = c.toChar().toString()
+            sb.append(char)
+            println("=======================$char")
+            println("-----------------${sb.toString()}")
         }
         return sb.toString()
     }
