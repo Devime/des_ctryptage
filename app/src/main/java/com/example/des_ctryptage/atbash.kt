@@ -42,8 +42,7 @@ class atbash : AppCompatActivity() {
                 println(txt[i])
             c = txt[i].toByte().toInt()
             println("******************************$c")
-            c = (126 - c )+33
-            //c = (25 - (c - 97)) + 97
+            c = (126 - c )+32
             println("******************************$c")
             val char = c.toChar().toString()
             sb.append(char)

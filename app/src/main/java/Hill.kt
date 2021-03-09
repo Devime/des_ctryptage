@@ -1,3 +1,4 @@
+/*
 package com.example.des_ctryptage
 
 import androidx.appcompat.app.AppCompatActivity
@@ -16,7 +17,10 @@ class Hill :AppCompatActivity() {
     }
     fun texte (i:Int,cle:String,message:String){
         val alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        var a,b,c,d
+        var a
+        var b
+        var c
+        var d
         var A=[a,b,c,d]//matrice
         var nbr = alphabet.length//longueur du texte (nbr de caractere)
         var determinantA = (A[0]*A[3]-A[1]*A[2])% nbr //determinant de la matrice A modulo n
@@ -24,4 +28,4 @@ class Hill :AppCompatActivity() {
             message+=''
 
 
-}
+}*/

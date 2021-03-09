@@ -4,8 +4,9 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.des_ctryptage.R
-class cesar {
+class cesar: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cesar)
@@ -16,13 +17,13 @@ class cesar {
         var txtout = findViewById<TextView>(R.id.cesartxout)
 
         Btchiffrement.setOnClickListener {
-            var out = crypter(txtin.text.toString())
+            var out = crypter(3,txtin.text.toString())
             println(txtin.text.toString())
             txtout.text = out
         }
 
         Btdechiffrement.setOnClickListener {
-            var out = decrypter(txtin.text.toString())
+            var out = decrypter(3,txtin.text.toString())
             println(txtin.text.toString())
             txtout.text = out
         }
@@ -98,12 +99,5 @@ class cesar {
         else
             -a
     }
-    //fonction de teste
-    @JvmStatic
-    fun main(args: Array<String>) {
-        val t = "je suis nulle"
-        val f="mh vxlv qxooh"
-        println(crypter(3, t))
-        println(decrypter(3, f))
-    }
+
 }
