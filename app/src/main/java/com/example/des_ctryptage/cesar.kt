@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.*
+
 import com.example.des_ctryptage.R
 class cesar {
     override fun onCreate(savedInstanceState: Bundle?) {
