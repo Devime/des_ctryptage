@@ -12,7 +12,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titre"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"/>
 
@@ -20,7 +20,7 @@
         android:id="@+id/encoder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="encoder"
         app:layout_constraintTop_toBottomOf="@id/textbase"
         app:layout_constraintLeft_toLeftOf="@id/textbase"
         app:layout_constraintRight_toLeftOf="@id/decoder" />
@@ -41,9 +41,10 @@
         android:layout_height="36dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="211dp" />
+        android:text="a"
+        app:layout_constraintTop_toBottomOf="@id/encoder"
+        app:layout_constraintLeft_toLeftOf="@id/encoder"
+        app:layout_constraintBottom_toTopOf="@id/c"/>
 
 
 
@@ -53,9 +54,11 @@
         android:layout_height="36dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="198dp"
-        tools:layout_editor_absoluteY="211dp" />
+        android:text="b"
+        app:layout_constraintTop_toBottomOf="@id/decoder"
+        app:layout_constraintLeft_toRightOf="@id/a"
+        app:layout_constraintRight_toRightOf="@id/decoder"
+        app:layout_constraintBottom_toTopOf="@id/d" />
 
     <EditText
         android:id="@+id/c"
@@ -63,9 +66,10 @@
         android:layout_height="36dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="270dp" />
+        android:text="c"
+        app:layout_constraintTop_toBottomOf="@id/a"
+        app:layout_constraintLeft_toLeftOf="@id/a"
+        app:layout_constraintBottom_toTopOf="@id/textsortie"/>
 
     <EditText
         android:id="@+id/d"
@@ -73,21 +77,36 @@
         android:layout_height="36dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="198dp"
-        tools:layout_editor_absoluteY="274dp" />
+        android:text="d  "
+        app:layout_constraintTop_toBottomOf="@id/b"
+        app:layout_constraintLeft_toLeftOf="@id/b"
+        app:layout_constraintBottom_toTopOf="@id/textsortie" />
 
     <EditText
         android:id="@+id/textsortie"
-        android:layout_width="249dp"
-        android:layout_height="93dp"
+        android:layout_width="269dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="96dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="359dp" />
+        app:layout_constraintTop_toBottomOf="@id/a"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
 
-
+    <TextView
+        android:id="@+id/titre"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="Hill"
+        android:textSize="60sp"
+        android:textColor="@color/purple_500"
+        app:layout_constraintBottom_toTopOf="@id/textbase"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

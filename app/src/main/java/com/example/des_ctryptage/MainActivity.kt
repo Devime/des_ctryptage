@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.example.des_ctryptage.com.example.des_ctryptage.cesar
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         var btsym: Button = findViewById<Button>(R.id.B1sym)
         btsym.setOnClickListener {
-            var intent = Intent(this, atbash::class.java)
+            var intent = Intent(this, Atbash::class.java)
             startActivity(intent)
         }
         var btplfr: Button = findViewById<Button>(R.id.B1PlayFair)
@@ -22,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         }
         var btcesar: Button = findViewById<Button>(R.id.B1Cesar)
         btcesar.setOnClickListener {
-            var intent = Intent(this, cesar::class.java)
+            var intent = Intent(this, Cesar::class.java)
             startActivity(intent)
 
         }
