@@ -102,7 +102,7 @@
         android:fontFamily="cursive"
         android:text="Hill"
         android:textSize="60sp"
-        android:textColor="@color/design_default_color_primary"
+        android:textColor="@color/purple_500"
         app:layout_constraintBottom_toTopOf="@id/textbase"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
