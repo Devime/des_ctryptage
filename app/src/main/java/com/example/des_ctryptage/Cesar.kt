@@ -1,11 +1,11 @@
-package com.example.des_ctryptage.com.example.des_ctryptage
+package com.example.des_ctryptage
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.des_ctryptage.R
+
 class Cesar: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

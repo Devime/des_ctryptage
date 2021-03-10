@@ -1,11 +1,9 @@
-package com.example.des_ctryptage.com.example.des_ctryptage
+package com.example.des_ctryptage
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
-import com.example.des_ctryptage.R
 import java.lang.Integer.valueOf
 
 class Hill : AppCompatActivity() {
@@ -43,7 +41,7 @@ class Hill : AppCompatActivity() {
                 couple = listOf<String>(textentre[i].toString(), textentre[i+1].toString()).toTypedArray()
             }
 
-            var new_couple=applique_matrice(couple,a,b,c,d)
+            var new_couple=appliqueMatrice(couple,a,b,c,d)
             sb.append(new_couple[0])
             sb.append(new_couple[1])
             i+=2
@@ -52,33 +50,31 @@ class Hill : AppCompatActivity() {
 
     }
 
-    private fun applique_matrice(couple: Array<String>, a: String, b: String, c: String, d: String): Array<String> {
+    private fun appliqueMatrice(couple: Array<String>, a: String, b: String, c: String, d: String): Array<String> {
         var new_couple: Array<String>
-        var rangx1 = couple[0].toByte().toInt()
+        var rangx1 = couple[0].toCharArray()[0].toInt()
         rangx1-=97
-        var rangx2 = couple[1].toByte().toInt()
+        var rangx2 = couple[1].toCharArray()[0].toInt()
         rangx2-=97
-        var y1= ((valueOf(a[0].toString())*rangx1+valueOf(b[0].toString())*rangx2)%26)+97
-        var y2=((valueOf(c[0].toString())*rangx1+valueOf(d[0].toString())*rangx2)%26)+97
+        var y1= ((valueOf(a)*rangx1+valueOf(b)*rangx2)%26)+97
+        var y2=((valueOf(c)*rangx1+valueOf(d)*rangx2)%26)+97
         new_couple = listOf<String>(y1.toChar().toString(),y2.toChar().toString()).toTypedArray()
         return new_couple
 
 
     }
-}
 
-fun check(a: String, b: String, c: String, d: String): Boolean {
+    private fun check(a: String, b: String, c: String, d: String): Boolean {
 
-    var deter:Int=valueOf(a)*valueOf(d)-valueOf(b)*valueOf(c)
-    if(deter%2==0 || deter%13==0){
-        return false
+        var deter:Int=valueOf(a)*valueOf(d)-valueOf(b)*valueOf(c)
+        if(deter%2==0 || deter%13==0){
+            return false
+        }
+        return true
+
     }
-    return true
-
-}
-
-fun texte(i: Int, cle: String, message: String) {
-
 
 
 }
+
+

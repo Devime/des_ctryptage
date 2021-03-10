@@ -37,50 +37,49 @@
 
     <EditText
         android:id="@+id/a"
-        android:layout_width="90dp"
-        android:layout_height="36dp"
+        android:layout_width="93dp"
+        android:layout_height="48dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="a"
-        app:layout_constraintTop_toBottomOf="@id/encoder"
+        app:layout_constraintBottom_toTopOf="@id/c"
         app:layout_constraintLeft_toLeftOf="@id/encoder"
-        app:layout_constraintBottom_toTopOf="@id/c"/>
-
+        app:layout_constraintTop_toBottomOf="@id/encoder" />
 
 
     <EditText
         android:id="@+id/b"
-        android:layout_width="90dp"
-        android:layout_height="36dp"
+        android:layout_width="102dp"
+        android:layout_height="46dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="b"
-        app:layout_constraintTop_toBottomOf="@id/decoder"
+        app:layout_constraintBottom_toTopOf="@id/d"
         app:layout_constraintLeft_toRightOf="@id/a"
         app:layout_constraintRight_toRightOf="@id/decoder"
-        app:layout_constraintBottom_toTopOf="@id/d" />
+        app:layout_constraintTop_toBottomOf="@id/decoder" />
 
     <EditText
         android:id="@+id/c"
-        android:layout_width="90dp"
-        android:layout_height="36dp"
+        android:layout_width="93dp"
+        android:layout_height="48dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="c"
-        app:layout_constraintTop_toBottomOf="@id/a"
+        app:layout_constraintBottom_toTopOf="@id/textsortie"
         app:layout_constraintLeft_toLeftOf="@id/a"
-        app:layout_constraintBottom_toTopOf="@id/textsortie"/>
+        app:layout_constraintTop_toBottomOf="@id/a" />
 
     <EditText
         android:id="@+id/d"
-        android:layout_width="90dp"
-        android:layout_height="36dp"
+        android:layout_width="104dp"
+        android:layout_height="49dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="d  "
-        app:layout_constraintTop_toBottomOf="@id/b"
+        android:inputType="number"
+        android:text="d"
+        app:layout_constraintBottom_toTopOf="@id/textsortie"
         app:layout_constraintLeft_toLeftOf="@id/b"
-        app:layout_constraintBottom_toTopOf="@id/textsortie" />
+        app:layout_constraintTop_toBottomOf="@id/b" />
 
     <EditText
         android:id="@+id/textsortie"
@@ -107,6 +106,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

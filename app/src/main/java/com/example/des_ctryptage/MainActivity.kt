@@ -4,8 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.example.des_ctryptage.com.example.des_ctryptage.Cesar
-import com.example.des_ctryptage.com.example.des_ctryptage.Hill
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
