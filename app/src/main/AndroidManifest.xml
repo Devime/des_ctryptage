@@ -11,7 +11,8 @@
         android:theme="@style/Theme.Des_ctryptage">
         <activity android:name=".Playfair"></activity>
         <activity android:name=".Atbash" />
-        <activity android:name=".Cesar" />
+        <activity android:name=".com.example.des_ctryptage.Cesar" />
+        <activity android:name=".com.example.des_ctryptage.Hill" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

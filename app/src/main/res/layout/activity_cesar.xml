@@ -5,37 +5,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cesar">
+    tools:context=".com.example.des_ctryptage.Cesar">
+
+    <TextView
+        android:id="@+id/titre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="César"
+        android:textSize="60sp"
+        android:textColor="@color/purple_500"
+        app:layout_constraintBottom_toTopOf="@id/cesartxin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/cesarBtcrypter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="147dp"
         android:text="crypter"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/cesartxin"
         app:layout_constraintTop_toBottomOf="@+id/cesartxin" />
 
     <Button
         android:id="@+id/cesarBtdecrypter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="24dp"
         android:text="decrypter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cesartxin" />
+        app:layout_constraintRight_toRightOf="@+id/cesartxin"
+        app:layout_constraintTop_toBottomOf="@+id/cesartxin"/>
 
     <TextView
         android:id="@+id/cesartxout"
-        android:layout_width="349dp"
-        android:layout_height="263dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginBottom="39dp"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_width="330dp"
+        android:layout_height="268dp"
+        android:textSize="23sp"
+        app:layout_constraintRight_toRightOf="@+id/cesartxin"
+        app:layout_constraintTop_toBottomOf="@id/cesarBtcrypter" />
 
     <EditText
         android:id="@+id/cesartxin"

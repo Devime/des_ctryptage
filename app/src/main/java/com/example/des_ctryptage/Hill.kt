@@ -25,14 +25,44 @@ class Hill : AppCompatActivity() {
             if (!check(a.text.toString(),b.text.toString(),c.text.toString(),d.text.toString())){
                 println("NON")
             }else{
-                chiffrement(a.text.toString(),b.text.toString(),c.text.toString(),d.text.toString(),textentre.text.toString())
+                var out=chiffrement(a.text.toString(),b.text.toString(),c.text.toString(),d.text.toString(),textentre.text.toString())
+                textsorti.setText(out)
             }
 
         }
     }
 
-    private fun chiffrement(a: String, b: String, c: String, d: String, textentre: String) {
-        //TODO
+    private fun chiffrement(a: String, b: String, c: String, d: String, textentre: String):String {
+        var couple: Array<String>
+        var sb: StringBuilder = StringBuilder()
+        var i = 0
+        do {
+            if (i == (textentre.length - 1)) {
+                couple = listOf<String>(textentre[i].toString(), "z").toTypedArray()
+            } else {
+                couple = listOf<String>(textentre[i].toString(), textentre[i+1].toString()).toTypedArray()
+            }
+
+            var new_couple=applique_matrice(couple,a,b,c,d)
+            sb.append(new_couple[0])
+            sb.append(new_couple[1])
+            i+=2
+        } while (i < textentre.length)
+        return sb.toString()
+
+    }
+
+    private fun applique_matrice(couple: Array<String>, a: String, b: String, c: String, d: String): Array<String> {
+        var new_couple: Array<String>
+        var rangx1 = couple[0].toByte().toInt()
+        rangx1-=97
+        var rangx2 = couple[1].toByte().toInt()
+        rangx2-=97
+        var y1= ((valueOf(a[0].toString())*rangx1+valueOf(b[0].toString())*rangx2)%26)+97
+        var y2=((valueOf(c[0].toString())*rangx1+valueOf(d[0].toString())*rangx2)%26)+97
+        new_couple = listOf<String>(y1.toChar().toString(),y2.toChar().toString()).toTypedArray()
+        return new_couple
+
 
     }
 }
@@ -48,7 +78,7 @@ fun check(a: String, b: String, c: String, d: String): Boolean {
 }
 
 fun texte(i: Int, cle: String, message: String) {
-    var a, b, c, d
+
 
 
 }
