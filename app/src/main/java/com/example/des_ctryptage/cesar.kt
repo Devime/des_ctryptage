@@ -5,9 +5,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 
 import com.example.des_ctryptage.R
-class cesar {
+class cesar : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cesar)
