@@ -31,7 +31,7 @@ class cesar : AppCompatActivity(){
         }
 
     }
-    var alphabet=charArrayOf('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
+    var alphabet=charArrayOf('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')//a changer et utiliser ASCII
     //fonction pour crypter
     fun crypter(n: Int, message_entre: String): String {
         val message=message_entre.toCharArray()
