@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.des_ctryptage.com.example.des_ctryptage.Vigenere
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +29,13 @@ class MainActivity : AppCompatActivity() {
         var bthill: Button = findViewById<Button>(R.id.B1Hill)
         bthill.setOnClickListener {
             var intent = Intent(this, Hill::class.java)
+            startActivity(intent)
+
+        }
+
+        var btvigenere: Button = findViewById<Button>(R.id.B1Vegenere)
+        btvigenere.setOnClickListener {
+            var intent = Intent(this, Vigenere::class.java)
             startActivity(intent)
 
         }
