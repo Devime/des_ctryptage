@@ -31,6 +31,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+        var bttrans: Button = findViewById<Button>(R.id.B1Transposition_rectangulaire)
+        bttrans.setOnClickListener {
+            var intent = Intent(this, Transpositionrect::class.java)
+            startActivity(intent)
+
+        }
 
         var btvigenere: Button = findViewById<Button>(R.id.B1Vigenere)
         btvigenere.setOnClickListener {

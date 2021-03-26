@@ -222,12 +222,13 @@ class Playfair : AppCompatActivity() {
         var i = 0
         var j = 0
         var y = 0
+        var x=tab[i].size
         for (k in 0 until 2) {
             println("----------------------searching : "+couple[k])
             if (couple[k] == "w") couple[k] = "v"
             while (tab[i][j] != couple[k]) {
                 j++
-                if (j == 4) {
+                if (j == x) {
                     i++
                     j = 0
                 }
