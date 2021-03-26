@@ -20,8 +20,5 @@ class Vigenere : AppCompatActivity() {
 
         }
 
-        private fun chiffrement(textentre: String):String {
 
-
-        }
-    }
+    }}

@@ -4,7 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Atbash">
+    tools:context=".Atbash"
+    android:background="@drawable/hdpi">
+
+    <TextView
+        android:id="@+id/titre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="Atbash"
+        android:textSize="60sp"
+        android:textColor="@color/purple_500"
+        app:layout_constraintBottom_toTopOf="@id/atbashtxin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/atbashBtchiff"

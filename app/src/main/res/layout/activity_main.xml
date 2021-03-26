@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/hdpi">
 
     <Button
         android:id="@+id/B1sym"
-        android:layout_width="394dp"
-        android:layout_height="53dp"
+        android:layout_width="380dp"
+        android:layout_height="55dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="atbash"
+        app:layout_constraintBottom_toTopOf="@+id/B1PlayFair"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,10 +24,11 @@
         android:layout_width="380dp"
         android:layout_height="57dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="29dp"
         android:layout_marginEnd="16dp"
         android:text="PlayFair"
+        app:layout_constraintBottom_toTopOf="@+id/B1Cesar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/B1sym" />
 
@@ -35,10 +37,11 @@
         android:layout_width="380dp"
         android:layout_height="57dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="29dp"
         android:layout_marginEnd="16dp"
         android:text="Cesar"
+        app:layout_constraintBottom_toTopOf="@+id/B1Hill"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/B1PlayFair" />
 
@@ -48,10 +51,12 @@
         android:layout_width="380dp"
         android:layout_height="57dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="29dp"
+
         android:layout_marginEnd="16dp"
         android:text="Hill"
+        app:layout_constraintBottom_toTopOf="@+id/B1Polybe"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/B1Cesar" />
 
@@ -60,47 +65,51 @@
         android:layout_width="380dp"
         android:layout_height="57dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="29dp"
         android:layout_marginEnd="16dp"
         android:text="Polybe"
+        app:layout_constraintBottom_toTopOf="@+id/B1Vegenere"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/B1Hill"/>
+        app:layout_constraintTop_toBottomOf="@+id/B1Hill" />
 
     <Button
         android:id="@+id/B1Vegenere"
         android:layout_width="380dp"
         android:layout_height="57dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="29dp"
         android:layout_marginEnd="16dp"
         android:text="Végenére"
+        app:layout_constraintBottom_toTopOf="@+id/B1Transposition_rectangulaire"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/B1Polybe"/>
+        app:layout_constraintTop_toBottomOf="@+id/B1Polybe" />
 
     <Button
         android:id="@+id/B1Transposition_rectangulaire"
         android:layout_width="380dp"
         android:layout_height="57dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="29dp"
         android:layout_marginEnd="16dp"
         android:text="Transposition rectangulaire"
+        app:layout_constraintBottom_toTopOf="@+id/B1Delastelle"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/B1Vegenere"/>
+        app:layout_constraintTop_toBottomOf="@+id/B1Vegenere" />
 
     <Button
         android:id="@+id/B1Delastelle"
         android:layout_width="380dp"
         android:layout_height="57dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="29dp"
         android:layout_marginEnd="16dp"
         android:text="Delastelle"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/B1Transposition_rectangulaire"/>
+        app:layout_constraintTop_toBottomOf="@+id/B1Transposition_rectangulaire" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
