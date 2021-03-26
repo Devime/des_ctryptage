@@ -13,7 +13,9 @@
         <activity android:name=".Atbash" />
         <activity android:name=".Cesar" />
         <activity android:name=".Hill" />
+        <activity android:name=".Vigenere"/>
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

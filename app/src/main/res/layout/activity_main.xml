@@ -67,19 +67,19 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="Polybe"
-        app:layout_constraintBottom_toTopOf="@+id/B1Vegenere"
+        app:layout_constraintBottom_toTopOf="@+id/B1Vigenere"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/B1Hill" />
 
     <Button
-        android:id="@+id/B1Vegenere"
+        android:id="@+id/B1Vigenere"
         android:layout_width="380dp"
         android:layout_height="57dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Végenére"
+        android:text="Vigenére"
         app:layout_constraintBottom_toTopOf="@+id/B1Transposition_rectangulaire"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -97,7 +97,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/B1Vegenere" />
+        app:layout_constraintTop_toBottomOf="@+id/B1Vigenere" />
 
     <Button
         android:id="@+id/B1Delastelle"
