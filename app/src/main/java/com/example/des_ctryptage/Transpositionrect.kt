@@ -20,48 +20,85 @@ class Transpositionrect : AppCompatActivity() {
         var btundo: Button = findViewById(R.id.transbtun)
 
         btdo.setOnClickListener {
-            var tab = maketab(keytxt.text.toString(),txtin.text.toString())
-            var txt = chiffrement(tab,keytxt.text.toString().length)
-
-
+            var out = maketabc(keytxt.text.toString(), txtin.text.toString())
+            txtout.setText(out)
+        }
+        btundo.setOnClickListener {
+            var tin = maketabd(keytxt.text.toString(), txtout.text.toString())
+            txtin.setText(tin)
         }
 
 
     }
 
-    private fun chiffrement(tab: Array<Array<String>>,col:Int): String {
+    private fun chiffrement(tab: Array<Array<String>>, col: Int, line: Int): String {
         var sb: StringBuilder = StringBuilder()
-        for ( i in 0 until col){
-
+        var ind = 1
+        var ref = 1
+        for (i in 0 until col) {
+            while (tab[ref][1] != (i + 1).toString()) {
+                ref++
+            }
+            for (j in 2 until line) {
+                if (tab[ref][j] != "Xx") {
+                    sb.append(tab[ref][j])
+                    //println(sb.toString())
+                } else {
+                    ref--
+                }
+            }
+            ref = 0
         }
+        println("sout len : " + sb.length)
         return sb.toString()
     }
 
-    private fun maketab(key:String, txt: String): Array<Array<String>> {
+    private fun maketabd(key: String, txt: String): String {
 
-        var col= key.length
-        var line = (txt.length/key.length)+3
-        println( "col = $col & line = $line")
-        if (txt.length%col!=0) line++
+        var col = key.length
+        var line = (txt.length / key.length) + 3
+        println("col = $col & line = $line")
+        var plus = txt.length % col
+        //if (plus != 0) line=line
+        println("line = $line et plus = $plus")
         var tab: Array<Array<String>> = Array(col) { Array(line) { " " } }
+        var nbline = line - 3
+        println("col : $col , line : $line , plus : $plus , nbline : $line , lenght : " + txt.length)
 
-        for (i in 0 until col){
-            tab[i][0]= key[i].toString()
-            tab[i][1]= "0"
+        for (i in 0 until col) {
+            tab[i][0] = key[i].toString()
+            tab[i][1] = "0"
         }
-        var sorted=key.toSortedSet().toString()
+        var sorted = key.toSortedSet().toString()
         println(sorted)
-        var p=1
-        for (i in sorted.indices){
-            for(j in 0 until col) {
-                println(tab[j][0]+"-->"+sorted[i])
-                if (tab[j][0] == sorted[i].toString() && tab[j][1] == "0"){
+        var p = 1
+        var mem = 0
+        for (i in sorted.indices) {
+            for (j in 0 until col) {
+                //println(tab[j][0]+"-->"+sorted[i])
+                if (tab[j][0] == sorted[i].toString() && tab[j][1] == "0") {
                     tab[j][1] = (p).toString()
                     p++
+                    for (y in 0 until nbline) {
+                        if (mem + y < txt.length) {
+
+                            tab[j][y + 2] = txt[mem + y].toString()
+                        }
+                    }
+                    if (j + 1 <= plus) {
+                        tab[j][line - 1] = txt[mem + nbline].toString()
+                        mem++
+
+                    }
+                    mem += nbline
                 }
             }
         }
-        var nc = 0
+        for (i in plus until col) {
+            println("->$i----------")
+            tab[i][line - 1] = "Xx"
+        }
+        /*var nc = 0
         var nl = 2
         for(j in txt.indices){
             tab[nc][nl] = txt[j].toString()
@@ -74,9 +111,69 @@ class Transpositionrect : AppCompatActivity() {
         while(nc!=col){
             tab[nc][nl] ="Xx"
             nc++
+        }*/
+
+        affiche(tab, col, line)
+        return dechiffrement(tab, col, line)
+    }
+
+    private fun dechiffrement(tab: Array<Array<String>>, col: Int, line: Int): String {
+        var sb: StringBuilder = StringBuilder()
+        var c = 0
+        var l = 2
+        while (tab[c][l].toString() != "Xx" || (c == (col - 1) && l == (line - 1))) {
+            sb.append(tab[c][l])
+            c++
+            if (c == col) {
+                c = 0
+                l++
+            }
         }
-        affiche(tab,col,line)
-        return tab
+
+
+        return sb.toString()
+    }
+
+    private fun maketabc(key: String, txt: String): String {
+
+        var col = key.length
+        var line = (txt.length / key.length) + 2
+        //println("col = $col & line = $line  et l : " + txt.length)
+        if (txt.length % col != 0) line++
+        var tab: Array<Array<String>> = Array(col) { Array(line) { " " } }
+        for (i in 0 until col) {
+            tab[i][0] = key[i].toString()
+            tab[i][1] = "0"
+        }
+        var sorted = key.toSortedSet().toString()
+        var p = 1
+
+        for (i in sorted.indices) {
+            for (j in 0 until col) {
+                if (tab[j][0] == sorted[i].toString() && tab[j][1] == "0") {
+                    tab[j][1] = (p).toString()
+                    p++
+                }
+            }
+        }
+        var nc = 0
+        var nl = 2
+        for (j in txt.indices) {
+            tab[nc][nl] = txt[j].toString()
+            nc++
+            if (nc == col) {
+                nc = 0
+                nl++
+            }
+        }
+        if (nc > 0) {
+            while (nc != col) {
+                tab[nc][nl] = "Xx"
+                nc++
+            }
+        }
+        affiche(tab, col, line)
+        return chiffrement(tab, col, line)
     }
 
 
@@ -85,6 +182,7 @@ class Transpositionrect : AppCompatActivity() {
         var tableLayout: TableLayout = findViewById(R.id.transtable)
         var row: TableRow
         var cell: TextView
+        tableLayout.removeAllViews()
         for (li in 0 until line) {
             row = TableRow(this)
             for (c in 0 until col) {
