@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import java.lang.Integer.valueOf
 
 class Hill : AppCompatActivity() {
@@ -22,6 +23,8 @@ class Hill : AppCompatActivity() {
         crypter.setOnClickListener {
             if (!check(a.text.toString(),b.text.toString(),c.text.toString(),d.text.toString())){
                 println("NON")
+                val toast = Toast.makeText(applicationContext,"matrice non valide", Toast.LENGTH_LONG)
+                toast.show()
             }else{
                 var out=chiffrement(a.text.toString(),b.text.toString(),c.text.toString(),d.text.toString(),textentre.text.toString())
                 textsorti.setText(out)
@@ -36,30 +39,30 @@ class Hill : AppCompatActivity() {
         var i = 0
         do {
             if (i == (textentre.length - 1)) {
-                couple = listOf<String>(textentre[i].toString(), "z").toTypedArray()
+                couple = listOf<String>(textentre[i].toString()," ").toTypedArray()
             } else {
                 couple = listOf<String>(textentre[i].toString(), textentre[i+1].toString()).toTypedArray()
             }
 
-            var new_couple=appliqueMatrice(couple,a,b,c,d)
-            sb.append(new_couple[0])
-            sb.append(new_couple[1])
+            var newCouple=appliqueMatrice(couple,a,b,c,d)
+            sb.append(newCouple[0])
+            sb.append(newCouple[1])
             i+=2
-        } while (i < textentre.length)
+        } while (i < textentre.length-1)
         return sb.toString()
 
     }
 
     private fun appliqueMatrice(couple: Array<String>, a: String, b: String, c: String, d: String): Array<String> {
-        var new_couple: Array<String>
+        var newcouple: Array<String>
         var rangx1 = couple[0].toCharArray()[0].toInt()
-        rangx1-=97
+        rangx1-=32
         var rangx2 = couple[1].toCharArray()[0].toInt()
-        rangx2-=97
-        var y1= ((valueOf(a)*rangx1+valueOf(b)*rangx2)%26)+97
-        var y2=((valueOf(c)*rangx1+valueOf(d)*rangx2)%26)+97
-        new_couple = listOf<String>(y1.toChar().toString(),y2.toChar().toString()).toTypedArray()
-        return new_couple
+        rangx2-=32
+        var y1= ((valueOf(a)*rangx1+valueOf(b)*rangx2)%95)+32
+        var y2=((valueOf(c)*rangx1+valueOf(d)*rangx2)%95)+32
+        newcouple = listOf<String>(y1.toChar().toString(),y2.toChar().toString()).toTypedArray()
+        return newcouple
 
 
     }
@@ -67,7 +70,7 @@ class Hill : AppCompatActivity() {
     private fun check(a: String, b: String, c: String, d: String): Boolean {
 
         var deter:Int=valueOf(a)*valueOf(d)-valueOf(b)*valueOf(c)
-        if(deter%2==0 || deter%13==0){
+        if(deter%5==0 || deter%19==0){
             return false
         }
         return true

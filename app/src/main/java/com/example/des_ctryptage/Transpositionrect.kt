@@ -98,20 +98,6 @@ class Transpositionrect : AppCompatActivity() {
             println("->$i----------")
             tab[i][line - 1] = "Xx"
         }
-        /*var nc = 0
-        var nl = 2
-        for(j in txt.indices){
-            tab[nc][nl] = txt[j].toString()
-            nc++
-            if (nc==col){
-                nc=0
-                nl++
-            }
-        }
-        while(nc!=col){
-            tab[nc][nl] ="Xx"
-            nc++
-        }*/
 
         affiche(tab, col, line)
         return dechiffrement(tab, col, line)
