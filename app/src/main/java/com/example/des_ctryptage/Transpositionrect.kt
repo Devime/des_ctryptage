@@ -59,7 +59,7 @@ class Transpositionrect : AppCompatActivity() {
         var line = (txt.length / key.length) + 3
         println("col = $col & line = $line")
         var plus = txt.length % col
-        //if (plus != 0) line=line
+
         println("line = $line et plus = $plus")
         var tab: Array<Array<String>> = Array(col) { Array(line) { " " } }
         var nbline = line - 3
