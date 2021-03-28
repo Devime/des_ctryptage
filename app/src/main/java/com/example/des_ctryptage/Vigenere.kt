@@ -36,9 +36,6 @@ class Vigenere : AppCompatActivity() {
         }
         return builder.toString()
     }
-
-
-
     fun decoder(s: String, key: String): String {
         val builder = StringBuilder()
         for (i in 0 until s.length) {
