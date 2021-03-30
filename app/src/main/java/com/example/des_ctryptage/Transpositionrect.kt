@@ -13,18 +13,18 @@ class Transpositionrect : AppCompatActivity() {
 
         var tableLayout: TableLayout = findViewById(R.id.transtable)
 
-        var btdo: Button = findViewById(R.id.transbt)
-        var keytxt: EditText = findViewById(R.id.transkey)
-        var txtin: EditText = findViewById(R.id.transin)
-        var txtout: EditText = findViewById(R.id.transout)
-        var btundo: Button = findViewById(R.id.transbtun)
+        val btdo: Button = findViewById(R.id.transbt)
+        val keytxt: EditText = findViewById(R.id.transkey)
+        val txtin: EditText = findViewById(R.id.transin)
+        val txtout: EditText = findViewById(R.id.transout)
+        val btundo: Button = findViewById(R.id.transbtun)
 
         btdo.setOnClickListener {
-            var out = maketabc(keytxt.text.toString(), txtin.text.toString())
+            val out = maketabc(keytxt.text.toString(), txtin.text.toString())
             txtout.setText(out)
         }
         btundo.setOnClickListener {
-            var tin = maketabd(keytxt.text.toString(), txtout.text.toString())
+            val tin = maketabd(keytxt.text.toString(), txtout.text.toString())
             txtin.setText(tin)
         }
 
@@ -55,21 +55,21 @@ class Transpositionrect : AppCompatActivity() {
 
     private fun maketabd(key: String, txt: String): String {
 
-        var col = key.length
-        var line = (txt.length / key.length) + 3
+        val col = key.length
+        val line = (txt.length / key.length) + 3
         println("col = $col & line = $line")
-        var plus = txt.length % col
+        val plus = txt.length % col
 
         println("line = $line et plus = $plus")
-        var tab: Array<Array<String>> = Array(col) { Array(line) { " " } }
-        var nbline = line - 3
+        val tab: Array<Array<String>> = Array(col) { Array(line) { " " } }
+        val nbline = line - 3
         println("col : $col , line : $line , plus : $plus , nbline : $line , lenght : " + txt.length)
 
         for (i in 0 until col) {
             tab[i][0] = key[i].toString()
             tab[i][1] = "0"
         }
-        var sorted = key.toSortedSet().toString()
+        val sorted = key.toSortedSet().toString()
         println(sorted)
         var p = 1
         var mem = 0
@@ -104,7 +104,7 @@ class Transpositionrect : AppCompatActivity() {
     }
 
     private fun dechiffrement(tab: Array<Array<String>>, col: Int, line: Int): String {
-        var sb: StringBuilder = StringBuilder()
+        val sb: StringBuilder = StringBuilder()
         var c = 0
         var l = 2
         while (tab[c][l].toString() != "Xx" || (c == (col - 1) && l == (line - 1))) {
@@ -122,16 +122,16 @@ class Transpositionrect : AppCompatActivity() {
 
     private fun maketabc(key: String, txt: String): String {
 
-        var col = key.length
+        val col = key.length
         var line = (txt.length / key.length) + 2
         //println("col = $col & line = $line  et l : " + txt.length)
         if (txt.length % col != 0) line++
-        var tab: Array<Array<String>> = Array(col) { Array(line) { " " } }
+        val tab: Array<Array<String>> = Array(col) { Array(line) { " " } }
         for (i in 0 until col) {
             tab[i][0] = key[i].toString()
             tab[i][1] = "0"
         }
-        var sorted = key.toSortedSet().toString()
+        val sorted = key.toSortedSet().toString()
         var p = 1
 
         for (i in sorted.indices) {
@@ -165,7 +165,7 @@ class Transpositionrect : AppCompatActivity() {
 
     private fun affiche(tabi: Array<Array<String>>, col: Int, line: Int) {
 
-        var tableLayout: TableLayout = findViewById(R.id.transtable)
+        val tableLayout: TableLayout = findViewById(R.id.transtable)
         var row: TableRow
         var cell: TextView
         tableLayout.removeAllViews()

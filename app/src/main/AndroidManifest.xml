@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Des_ctryptage">
-        <activity android:name=".Transpositionrect"></activity>
+        <activity android:name=".Polybe"></activity>
+        <activity android:name=".Transpositionrect" />
         <activity android:name=".Playfair" />
         <activity android:name=".Atbash" />
         <activity android:name=".Cesar" />
         <activity android:name=".Hill" />
-        <activity android:name=".Vigenere"/>
+        <activity android:name=".Vigenere" />
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

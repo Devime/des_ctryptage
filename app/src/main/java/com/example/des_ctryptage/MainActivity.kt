@@ -9,42 +9,48 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var btsym: Button = findViewById<Button>(R.id.B1sym)
+        val btsym: Button = findViewById<Button>(R.id.B1sym)
         btsym.setOnClickListener {
-            var intent = Intent(this, Atbash::class.java)
+            val intent = Intent(this, Atbash::class.java)
             startActivity(intent)
         }
-        var btplfr: Button = findViewById<Button>(R.id.B1PlayFair)
+        val btplfr: Button = findViewById<Button>(R.id.B1PlayFair)
         btplfr.setOnClickListener {
-            var intent = Intent(this, Playfair::class.java)
+            val intent = Intent(this, Playfair::class.java)
             startActivity(intent)
         }
-        var btcesar: Button = findViewById<Button>(R.id.B1Cesar)
+        val btcesar: Button = findViewById<Button>(R.id.B1Cesar)
         btcesar.setOnClickListener {
-            var intent = Intent(this, Cesar::class.java)
+            val intent = Intent(this, Cesar::class.java)
             startActivity(intent)
 
         }
-        var bthill: Button = findViewById<Button>(R.id.B1Hill)
+        val bthill: Button = findViewById<Button>(R.id.B1Hill)
         bthill.setOnClickListener {
-            var intent = Intent(this, Hill::class.java)
+            val intent = Intent(this, Hill::class.java)
             startActivity(intent)
 
         }
-        var bttrans: Button = findViewById<Button>(R.id.B1Transposition_rectangulaire)
+        val bttrans: Button = findViewById<Button>(R.id.B1Transposition_rectangulaire)
         bttrans.setOnClickListener {
-            var intent = Intent(this, Transpositionrect::class.java)
+            val intent = Intent(this, Transpositionrect::class.java)
             startActivity(intent)
 
         }
 
-        var btvigenere: Button = findViewById<Button>(R.id.B1Vigenere)
+        val btvigenere: Button = findViewById<Button>(R.id.B1Vigenere)
         btvigenere.setOnClickListener {
-            var intent = Intent(this, Vigenere::class.java)
+            val intent = Intent(this, Vigenere::class.java)
             startActivity(intent)
 
         }
 
+        val btpolybe: Button = findViewById<Button>(R.id.B1Polybe)
+        btpolybe.setOnClickListener {
+            val intent = Intent(this, Polybe::class.java)
+            startActivity(intent)
+
+        }
 
     }
 }
