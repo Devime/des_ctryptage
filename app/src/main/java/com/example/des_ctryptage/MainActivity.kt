@@ -52,5 +52,12 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        val btdelastelle: Button = findViewById<Button>(R.id.B1Delastelle)
+        btdelastelle.setOnClickListener {
+            val intent = Intent(this, Delastelle::class.java)
+            startActivity(intent)
+
+        }
+
     }
 }

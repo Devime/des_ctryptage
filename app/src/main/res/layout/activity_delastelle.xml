@@ -4,35 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Playfair"
-    android:background="@drawable/hdpi">
+    tools:context=".Delastelle">
 
     <TextView
         android:id="@+id/titre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="cursive"
-        android:text="Payfair"
+        android:text="Delastelle"
         android:textSize="60sp"
         android:layout_marginTop="20dp"
         android:textColor="@color/purple_500"
-        app:layout_constraintBottom_toTopOf="@id/playin"
+        app:layout_constraintBottom_toTopOf="@id/delin"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/playin"
+        android:id="@+id/delin"
         android:layout_width="211dp"
         android:layout_height="45dp"
         android:layout_marginTop="43dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/playtx"
+        app:layout_constraintStart_toEndOf="@+id/deltx"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/playtx"
+        android:id="@+id/deltx"
         android:layout_width="127dp"
         android:layout_height="45dp"
         android:layout_marginStart="30dp"
@@ -51,20 +50,20 @@
         android:gravity="center"
         android:text="clef : "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playtx" />
+        app:layout_constraintTop_toBottomOf="@+id/deltx" />
 
     <EditText
-        android:id="@+id/playfrkey"
+        android:id="@+id/delkey"
         android:layout_width="211dp"
         android:layout_height="45dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/playin"
+        app:layout_constraintTop_toBottomOf="@+id/delin"
         android:importantForAutofill="no" />
 
     <Button
-        android:id="@+id/playfrbt"
+        android:id="@+id/delbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
@@ -74,17 +73,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/playfrbtun"
+        android:id="@+id/delbtun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginTop="64dp"
         android:text="dechiffrement"
-        app:layout_constraintStart_toEndOf="@+id/playfrbt"
+        app:layout_constraintStart_toEndOf="@+id/delbt"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TableLayout
-        android:id="@+id/playtable"
+        android:id="@+id/deltable"
         android:layout_width="361dp"
         android:layout_height="411dp"
         android:layout_marginStart="28dp"
@@ -95,7 +94,7 @@
     </TableLayout>
 
     <TextView
-        android:id="@+id/playofix"
+        android:id="@+id/delfix"
         android:layout_width="127dp"
         android:layout_height="45dp"
         android:layout_marginStart="30dp"
@@ -105,13 +104,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/playout"
+        android:id="@+id/delout"
         android:layout_width="211dp"
         android:layout_height="45dp"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintStart_toEndOf="@+id/playofix"
-        app:layout_constraintTop_toBottomOf="@+id/playfrkey" />
-
+        app:layout_constraintStart_toEndOf="@+id/delfix"
+        app:layout_constraintTop_toBottomOf="@+id/delkey" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

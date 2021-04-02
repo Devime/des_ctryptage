@@ -11,7 +11,7 @@ class Polybe : AppCompatActivity() {
 
     var carre: Array<Array<String>> = Array(6) { Array(6) { " " } }
 
-    private fun fill() {
+    fun fill() {
         var x = 97
         for (i in 0 until 6) {
             for (j in 0 until 6) {
@@ -25,6 +25,8 @@ class Polybe : AppCompatActivity() {
             }
         }
     }
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,7 +56,7 @@ class Polybe : AppCompatActivity() {
 
     }
 
-    private fun chiffrement(txt: String): String {
+    fun chiffrement(txt: String): String {
         val sb: StringBuilder = StringBuilder()
 
         txt.forEach {
@@ -65,18 +67,18 @@ class Polybe : AppCompatActivity() {
     }
 
 
-    private fun find(egg: String): String {
+    fun find(egg: String): String {
         val s = StringBuilder()
         var i = 0
         var j = 0
-        val x = 6
         println("----------------------searching : $egg")
         while (carre[i][j] != egg) {
-            println("j=$j i=$i")
-            j++
-            if (j == x - 1) {
-                i++
-                j = 0
+            //println("j=$j i=$i ->[$egg] ?= [${carre[i][j]}]")
+            i++
+            if (i == 6) {
+
+                j++
+                i = 0
             }
         }
         i++
@@ -88,7 +90,7 @@ class Polybe : AppCompatActivity() {
         return s.toString()
     }
 
-    private fun dechiffrement(txt:String):String{
+    fun dechiffrement(txt:String):String{
         val sb = StringBuilder()
         var i=0
         var ligne : Int
@@ -107,9 +109,9 @@ class Polybe : AppCompatActivity() {
     }
 
 
-    private fun affiche(tabi: Array<Array<String>>, col: Int, line: Int) {
+    fun affiche(tabi: Array<Array<String>>, col: Int, line: Int) {
 
-        var tableLayout: TableLayout = findViewById(R.id.polytable)
+        val tableLayout: TableLayout = findViewById(R.id.polytable)
         var row: TableRow
         var cell: TextView
         for (li in 0 until line) {
