@@ -27,6 +27,7 @@ class Delastelle : AppCompatActivity() {
 
         btdo.setOnClickListener {
             val out: String = chiffrement(txtin.text.toString(), key.text.toString())
+            txtout.setText(out)
         }
 
     }
