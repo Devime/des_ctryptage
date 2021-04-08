@@ -27,6 +27,7 @@
         android:layout_marginTop="90dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/polytx"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -91,6 +92,7 @@
         android:layout_marginTop="45dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/polyofix"
         app:layout_constraintTop_toBottomOf="@+id/polyin" />
 

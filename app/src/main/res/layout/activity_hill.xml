@@ -13,6 +13,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/titre"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"/>
@@ -43,6 +44,7 @@
         android:ems="10"
         android:inputType="number"
         android:text="a"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@id/c"
         app:layout_constraintLeft_toLeftOf="@id/encoder"
         app:layout_constraintTop_toBottomOf="@id/encoder" />
@@ -55,6 +57,7 @@
         android:ems="10"
         android:inputType="number"
         android:text="b"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@id/d"
         app:layout_constraintLeft_toRightOf="@id/a"
         app:layout_constraintRight_toRightOf="@id/decoder"
@@ -67,6 +70,7 @@
         android:ems="10"
         android:inputType="number"
         android:text="c"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@id/textsortie"
         app:layout_constraintLeft_toLeftOf="@id/a"
         app:layout_constraintTop_toBottomOf="@id/a" />
@@ -78,6 +82,7 @@
         android:ems="10"
         android:inputType="number"
         android:text="d"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@id/textsortie"
         app:layout_constraintLeft_toLeftOf="@id/b"
         app:layout_constraintTop_toBottomOf="@id/b" />
@@ -90,6 +95,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/a"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

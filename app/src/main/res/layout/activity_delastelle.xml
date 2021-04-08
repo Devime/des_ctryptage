@@ -27,6 +27,7 @@
         android:layout_marginTop="43dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/deltx"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,6 +59,7 @@
         android:layout_height="45dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/delin"
         android:importantForAutofill="no" />
@@ -109,6 +111,7 @@
         android:layout_height="45dp"
         android:ems="10"
         android:inputType="text"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/delfix"
         app:layout_constraintTop_toBottomOf="@+id/delkey" />
 

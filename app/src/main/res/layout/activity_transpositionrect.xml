@@ -26,6 +26,7 @@
         android:layout_marginTop="43dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/transtx"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,6 +58,7 @@
         android:layout_height="45dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/transin" />
 
@@ -109,7 +111,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/transfix"
-        app:layout_constraintTop_toBottomOf="@+id/transkey" />
+        app:layout_constraintTop_toBottomOf="@+id/transkey"
+        android:textColor="@color/black"/>
 
 
 
