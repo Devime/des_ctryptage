@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import java.lang.Integer.valueOf
-import java.lang.StringBuilder
+import kotlin.text.StringBuilder
 
 class Delastelle : AppCompatActivity() {
 
@@ -29,7 +29,48 @@ class Delastelle : AppCompatActivity() {
             val out: String = chiffrement(txtin.text.toString(), key.text.toString())
             txtout.setText(out)
         }
+        btundo.setOnClickListener {
+            val out : String = dechiffrement(txtout.text.toString(),key.text.toString())
+            txtin.setText(out)
+        }
+    }
 
+    private fun dechiffrement(txt: String, key: String): String {
+
+        val tab1: Array<String> = Array(txt.length) { " " }
+        val tab2: Array<String> = Array(txt.length) { " " }
+        val prestri = c.chiffrement(txt)
+        val nbdiv = txt.length/ valueOf(key)
+        val nbkey = valueOf(key)
+        println(nbdiv)
+        var i = 0
+        var k=0
+
+        println(" pre : $prestri")
+        for (div in 0 until nbdiv) {
+            println("div---->${div}")
+            for(j in nbkey*2*div until nbkey*2*div+nbkey ){
+                tab1[i]= prestri[j].toString()
+                println(" i = $i , x = $j/ ${prestri.length}")
+                println("p: ${prestri[j].toString()} -->1: ${tab1[i]}")
+                i++
+            }
+            for(j in nbkey*2*div+nbkey until  nbkey*2*div+2*nbkey ){
+                tab2[k]= prestri[j].toString()
+                println(" j = $k , x = $j / ${prestri.length}")
+                println("p: ${prestri[j].toString()} -->1: ${tab2[k]}")
+                k++
+            }
+        }
+        val subsb : java.lang.StringBuilder = java.lang.StringBuilder()
+        for (c in tab1.indices){
+            subsb.append(tab1[c])
+            subsb.append(tab2[c])
+            println(": : : > ${tab1[c]} + ${tab2[c]} =$subsb")
+        }
+
+
+        return c.dechiffrement(subsb.toString())
     }
 
     private fun chiffrement(txt: String, key: String): String {
@@ -64,8 +105,6 @@ class Delastelle : AppCompatActivity() {
             tab2[k] = tab[i + 1].toString()
             k++
         }
-        ///TODO découper les tab en n section de longueur kei puis faire la merde et afficher les lettre voilà bisous !
-
 
 
         for (div in 0 until nbdiv){
