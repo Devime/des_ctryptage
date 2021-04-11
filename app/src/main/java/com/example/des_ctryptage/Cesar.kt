@@ -11,25 +11,47 @@ class Cesar: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cesar)
 
-        var Btchiffrement = findViewById<Button>(R.id.cesarBtcrypter)
-        var Btdechiffrement = findViewById<Button>(R.id.cesarBtdecrypter)
-        var txtin = findViewById<EditText>(R.id.cesartxin)
-        var txtout = findViewById<TextView>(R.id.cesartxout)
+        val Btchiffrement = findViewById<Button>(R.id.cesarBtcrypter)
+        val Btdechiffrement = findViewById<Button>(R.id.cesarBtdecrypter)
+        val txtin = findViewById<EditText>(R.id.cesartxin)
+        val txtout = findViewById<EditText>(R.id.cesartxout)
 
         Btchiffrement.setOnClickListener {
-            var out = crypter(3,txtin.text.toString())
+            val out = chiffrement(3,txtin.text.toString())
             println(txtin.text.toString())
-            txtout.text = out
+            txtout.setText(out)
         }
 
         Btdechiffrement.setOnClickListener {
-            var out = decrypter(3,txtin.text.toString())
+            val out = chiffrement(-3,txtout.text.toString())
             println(txtin.text.toString())
-            txtout.text = out
+            txtin.setText(out)
         }
 
     }
-    var alphabet=charArrayOf('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
+
+    private fun chiffrement(i: Int, txt: String): String {
+        val sb : StringBuilder = StringBuilder()
+        var temp:Int
+        txt.forEach {
+            temp = it.toByte().toInt()
+            println("->$temp=")
+            temp = (temp - 32)+i
+            println("=$temp<-")
+            temp %= 95
+            println("=$temp=")
+            temp =if (temp>=0){
+                temp+32
+            }else{
+                temp+126
+            }
+            sb.append(temp.toChar().toString())
+        }
+        return sb.toString()
+    }
+
+
+    /*var alphabet=charArrayOf('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
     //fonction pour crypter
     fun crypter(n: Int, message_entre: String): String {
         val message=message_entre.toCharArray()
@@ -98,6 +120,6 @@ class Cesar: AppCompatActivity() {
             a
         else
             -a
-    }
+    }*/
 
 }
