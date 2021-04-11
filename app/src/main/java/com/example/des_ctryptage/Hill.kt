@@ -186,22 +186,21 @@ class Hill : AppCompatActivity() {
         c: String,
         d: String
     ): Array<String> {
-        var newcouple: Array<String>
+        val newcouple: Array<String>
         var rangx1 = couple[0].toCharArray()[0].toInt()
         rangx1 -= 32
         var rangx2 = couple[1].toCharArray()[0].toInt()
         rangx2 -= 32
-        var y1 = ((valueOf(a) * rangx1 + valueOf(b) * rangx2) % 95) + 32
-        var y2 = ((valueOf(c) * rangx1 + valueOf(d) * rangx2) % 95) + 32
+        val y1 = ((valueOf(a) * rangx1 + valueOf(b) * rangx2) % 95) + 32
+        val y2 = ((valueOf(c) * rangx1 + valueOf(d) * rangx2) % 95) + 32
         newcouple = listOf<String>(y1.toChar().toString(), y2.toChar().toString()).toTypedArray()
         return newcouple
-
 
     }
 
     private fun check(a: String, b: String, c: String, d: String): Boolean {
 
-        var deter: Int = valueOf(a) * valueOf(d) - valueOf(b) * valueOf(c)
+        val deter: Int = valueOf(a) * valueOf(d) - valueOf(b) * valueOf(c)
         if (deter % 5 == 0 || deter % 19 == 0) {
             return false
         }

@@ -4,29 +4,33 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import java.lang.StringBuilder
+import java.lang.Integer.valueOf
 
 class Vigenere : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vigenere)
-        var textentre: EditText = findViewById(R.id.textbase)
-        var textcle: EditText = findViewById(R.id.textcle)
-        var textsorti: EditText = findViewById(R.id.textsortie)
-        var crypter: Button = findViewById(R.id.encode)
-        var decrypter: Button = findViewById(R.id.decode)
+        val textentre: EditText = findViewById(R.id.textbase)
+        val textcle: EditText = findViewById(R.id.textcle)
+        val textsorti: EditText = findViewById(R.id.textsortie)
+        val crypter: Button = findViewById(R.id.encode)
+        val decrypter: Button = findViewById(R.id.decode)
+        val c = Cesar()
 
         crypter.setOnClickListener {
-            var sortie=encoder(textentre.text.toString(),textcle.text.toString())
+            //val sortie=encoder(textentre.text.toString(),textcle.text.toString())
+            println()
+            val sortie = c.chiffrement(valueOf(textcle.text.toString()),textentre.text.toString())
             textsorti.setText(sortie)
             
         }
         decrypter.setOnClickListener {
-            var de=decoder(encoder(textentre.text.toString(),textcle.text.toString()),textcle.text.toString() )
-            textsorti.setText(de)
+            //val de=decoder(encoder(textentre.text.toString(),textcle.text.toString()),textcle.text.toString() )
+            val de = c.chiffrement(-valueOf(textcle.text.toString()),textsorti.text.toString())
+            textentre.setText(de)
         }
     }
-    fun encoder(s: String, key: String): String {
+    /*fun encoder(s: String, key: String): String {
         val builder = StringBuilder()
         for (i in 0 until s.length) {
             require(!(s[i].toInt() < 65 || s[i].toInt() > 123)) {
@@ -51,6 +55,6 @@ class Vigenere : AppCompatActivity() {
         }
         return key[i % key.length].toInt() - 97
 
-    }
+    }*/
 
 }

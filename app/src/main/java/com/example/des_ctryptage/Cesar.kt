@@ -30,7 +30,7 @@ class Cesar: AppCompatActivity() {
 
     }
 
-    private fun chiffrement(i: Int, txt: String): String {
+    fun chiffrement(i: Int, txt: String): String {
         val sb : StringBuilder = StringBuilder()
         var temp:Int
         txt.forEach {
