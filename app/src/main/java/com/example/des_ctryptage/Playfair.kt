@@ -108,6 +108,7 @@ class Playfair : AppCompatActivity() {
             for (c in 0 until col) {
                 cell = TextView(this)
                 cell.text = if ((tabi[c][li]) != "_") tabi[c][li] else " "
+                println(cell.text)
                 cell.gravity = Gravity.CENTER
                 cell.textSize = 20F
                 cell.layoutParams = TableRow.LayoutParams(
@@ -226,9 +227,10 @@ class Playfair : AppCompatActivity() {
         for (k in 0 until 2) {
             println("----------------------searching : "+couple[k])
             if (couple[k] == "w") couple[k] = "v"
-            while (tab[i][j] != couple[k]) {
+            while (tab[i][j] != couple[k].toLowerCase()) {
+                println("i = $i j=$j -> ${tab[i][j]} != ${couple[k]} ")
                 j++
-                if (j == x) {
+                if (j == 5) {
                     i++
                     j = 0
                 }
