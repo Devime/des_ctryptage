@@ -2,8 +2,8 @@ package com.example.des_ctryptage
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
+import android.view.Gravity
+import android.widget.*
 import java.lang.Integer.valueOf
 import kotlin.text.StringBuilder
 
@@ -18,13 +18,18 @@ class Delastelle : AppCompatActivity() {
 
 
         c.fill()
-
+        affiche(c.carre,6,6)
         val btdo: Button = findViewById(R.id.delbt)
         val txtin: EditText = findViewById(R.id.delin)
         val key: EditText = findViewById((R.id.delkey))
         val txtout: EditText = findViewById(R.id.delout)
         val btundo: Button = findViewById(R.id.delbtun)
+        val btrand: Button = findViewById(R.id.delrand)
 
+        btrand.setOnClickListener {
+            c.random()
+            affiche(c.carre,6,6)
+        }
         btdo.setOnClickListener {
             val out: String = chiffrement(txtin.text.toString(), key.text.toString())
             txtout.setText(out)
@@ -125,6 +130,29 @@ class Delastelle : AppCompatActivity() {
 
         println(sb.toString())
         return sb.toString()
+    }
+
+    fun affiche(tabi: Array<Array<String>>, col: Int, line: Int) {
+
+        val tableLayout: TableLayout = findViewById(R.id.deltable)
+        tableLayout.removeAllViews()
+        var row: TableRow
+        var cell: TextView
+        for (li in 0 until line) {
+            row = TableRow(this)
+            for (c in 0 until col) {
+                cell = TextView(this)
+                cell.text = if ((tabi[c][li]) != "_") tabi[c][li] else " "
+                cell.gravity = Gravity.CENTER
+                cell.textSize = 20F
+                cell.layoutParams = TableRow.LayoutParams(
+                    0, android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
+                    1F
+                )
+                row.addView(cell)
+            }
+            tableLayout.addView(row)
+        }
     }
 
 }

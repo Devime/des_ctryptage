@@ -96,4 +96,24 @@
         app:layout_constraintStart_toEndOf="@+id/polyofix"
         app:layout_constraintTop_toBottomOf="@+id/polyin" />
 
+    <Button
+        android:id="@+id/polybtdef"
+        android:layout_width="153dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="4dp"
+        android:text="default"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/polyin" />
+
+    <Button
+        android:id="@+id/polybtrand"
+        android:layout_width="153dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="55dp"
+        android:text="Random"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/polyin" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

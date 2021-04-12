@@ -14,14 +14,14 @@ class Hill : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hill)
-        var a: EditText = findViewById(R.id.a)
-        var b: EditText = findViewById(R.id.b)
-        var c: EditText = findViewById(R.id.c)
-        var d: EditText = findViewById(R.id.d)
-        var textentre: EditText = findViewById(R.id.textbase)
-        var textsorti: EditText = findViewById(R.id.textsortie)
-        var crypter: Button = findViewById(R.id.encoder)
-        var decrypter: Button = findViewById(R.id.decoder)
+        val a: EditText = findViewById(R.id.a)
+        val b: EditText = findViewById(R.id.b)
+        val c: EditText = findViewById(R.id.c)
+        val d: EditText = findViewById(R.id.d)
+        val textentre: EditText = findViewById(R.id.textbase)
+        val textsorti: EditText = findViewById(R.id.textsortie)
+        val crypter: Button = findViewById(R.id.encoder)
+        val decrypter: Button = findViewById(R.id.decoder)
 
         crypter.setOnClickListener {
             if (!check(
@@ -36,7 +36,7 @@ class Hill : AppCompatActivity() {
                     Toast.makeText(applicationContext, "matrice non valide", Toast.LENGTH_LONG)
                 toast.show()
             } else {
-                var out = chiffrement(
+                val out = chiffrement(
                     a.text.toString(),
                     b.text.toString(),
                     c.text.toString(),
@@ -61,7 +61,7 @@ class Hill : AppCompatActivity() {
                     Toast.makeText(applicationContext, "matrice non valide", Toast.LENGTH_LONG)
                 toast.show()
             } else {
-                var out = dechiffremnt(
+                val out = dechiffremnt(
                     a.text.toString(),
                     b.text.toString(),
                     c.text.toString(),
@@ -76,7 +76,7 @@ class Hill : AppCompatActivity() {
 
     private fun chiffrement(a: String, b: String, c: String, d: String, textentre: String): String {
         var couple: Array<String>
-        var sb: StringBuilder = StringBuilder()
+        val sb: StringBuilder = StringBuilder()
         var i = 0
         do {
 
@@ -91,7 +91,7 @@ class Hill : AppCompatActivity() {
 
             println("i = $i -> ${couple[0]},${couple[1]} ")
 
-            var newCouple = appliqueMatrice(couple, a, b, c, d)
+            val newCouple = appliqueMatrice(couple, a, b, c, d)
             sb.append(newCouple[0])
             sb.append(newCouple[1])
             i += 2
@@ -141,7 +141,7 @@ class Hill : AppCompatActivity() {
         c: Int,
         d: Int
     ): Array<String> {
-        var newcouple: Array<String>
+        val newcouple: Array<String>
         //println("-----------------------")
         couple.forEach {
             print(it)
@@ -152,11 +152,11 @@ class Hill : AppCompatActivity() {
         var rangx2 = couple[1].toCharArray()[0].toInt()
         //println(rangx2)
         rangx2 -= 32
-        var y1 = Math.floorMod(((d * rangx1) - (b * rangx2)) , 95) + 32
+        val y1 = Math.floorMod(((d * rangx1) - (b * rangx2)) , 95) + 32
         val y11 = d*rangx1
         val y12 = b*rangx2
         val y111 = y11 - y12
-        var y2 = Math.floorMod((a * rangx2 - c * rangx1) , 95) + 32
+        val y2 = Math.floorMod((a * rangx2 - c * rangx1) , 95) + 32
         //println(" $y11 - $y12 = $y111 ->${Math.floorMod(y111,95)}")
         //println("y1 = $y1  y2 = $y2")
         //println("-----------------------")

@@ -6,6 +6,7 @@ import android.view.Gravity
 import android.widget.*
 import java.lang.StringBuilder
 import java.lang.Integer.valueOf
+import kotlin.random.Random.Default.nextInt
 
 class Polybe : AppCompatActivity() {
 
@@ -25,6 +26,23 @@ class Polybe : AppCompatActivity() {
             }
         }
     }
+    fun random(){
+        var random : Int
+        var temp : String
+        for (i in 0 until 6) {
+            for (j in 0 until 6) {
+                random = nextInt(35)
+                temp = carre[j][i]
+                val c = random/6
+                val l = (random%6)
+                println("rand = $random , c = $c , l = $l")
+
+                carre[j][i] = carre[c][l]
+                carre[c][l] = temp
+            }
+        }
+
+    }
 
 
 
@@ -39,6 +57,8 @@ class Polybe : AppCompatActivity() {
         val txtin: EditText = findViewById(R.id.polyin)
         val txtout: EditText = findViewById(R.id.polyout)
         val btundo: Button = findViewById(R.id.polyfrbtun)
+        val btdefault: Button = findViewById(R.id.polybtdef)
+        val  btrand: Button = findViewById(R.id.polybtrand)
 
         fill()
         affiche(carre, 6, 6)
@@ -52,6 +72,17 @@ class Polybe : AppCompatActivity() {
             val out = dechiffrement(txtout.text.toString())
             txtin.setText(out)
         }
+
+        btdefault.setOnClickListener {
+            fill()
+            affiche(carre,6,6)
+        }
+
+        btrand.setOnClickListener {
+            random()
+            affiche(carre,6,6)
+        }
+
 
 
     }
@@ -112,6 +143,7 @@ class Polybe : AppCompatActivity() {
     fun affiche(tabi: Array<Array<String>>, col: Int, line: Int) {
 
         val tableLayout: TableLayout = findViewById(R.id.polytable)
+        tableLayout.removeAllViews()
         var row: TableRow
         var cell: TextView
         for (li in 0 until line) {
