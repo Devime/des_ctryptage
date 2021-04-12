@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:screenOrientation="portrait"
         android:theme="@style/Theme.Des_ctryptage">
-        <activity android:name=".Delastelle"></activity>
+        <activity android:name=".Delastelle" />
         <activity android:name=".Polybe" />
         <activity android:name=".Transpositionrect" />
         <activity android:name=".Playfair" />
