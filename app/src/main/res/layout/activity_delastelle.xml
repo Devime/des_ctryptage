@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Delastelle">
+    tools:context=".Delastelle"
+    android:background="@drawable/hdpi">
 
     <TextView
         android:id="@+id/titre"
@@ -13,7 +14,6 @@
         android:fontFamily="cursive"
         android:text="Delastelle"
         android:textSize="60sp"
-        android:layout_marginTop="20dp"
         android:textColor="@color/purple_500"
         app:layout_constraintBottom_toTopOf="@id/delin"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -24,24 +24,23 @@
         android:id="@+id/delin"
         android:layout_width="211dp"
         android:layout_height="45dp"
-        android:layout_marginTop="43dp"
         android:ems="10"
         android:inputType="text"
         android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/deltx"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/titre"
+        app:layout_constraintLeft_toRightOf="@id/deltx"/>
 
     <TextView
         android:id="@+id/deltx"
         android:layout_width="127dp"
         android:layout_height="45dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="43dp"
+        android:layout_marginLeft="30dp"
         android:gravity="center"
         android:text="texte :"
         android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/titre"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
 
     <TextView
         android:id="@+id/textView2"
@@ -69,28 +68,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="64dp"
         android:text="chiffrement"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/delfix" />
 
     <Button
         android:id="@+id/delbtun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="64dp"
         android:text="dechiffrement"
         app:layout_constraintStart_toEndOf="@+id/delbt"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/delfix" />
 
     <TableLayout
         android:id="@+id/deltable"
-        android:layout_width="361dp"
-        android:layout_height="411dp"
+        android:layout_width="330dp"
+        android:layout_height="350dp"
         android:layout_marginStart="28dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/delrand"
         app:layout_constraintStart_toStartOf="parent">
 
     </TableLayout>
@@ -119,10 +115,9 @@
         android:id="@+id/delrand"
         android:layout_width="205dp"
         android:layout_height="51dp"
-        android:layout_marginStart="123dp"
-        android:layout_marginTop="3dp"
         android:text="make random polybe"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/delbt"
+        app:layout_constraintRight_toLeftOf="@id/delbtun"
         app:layout_constraintTop_toBottomOf="@+id/delbt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

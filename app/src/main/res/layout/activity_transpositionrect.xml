@@ -23,24 +23,22 @@
         android:id="@+id/transin"
         android:layout_width="211dp"
         android:layout_height="45dp"
-        android:layout_marginTop="43dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/transtx"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/titre" />
 
     <TextView
         android:id="@+id/transtx"
         android:layout_width="127dp"
         android:layout_height="45dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="43dp"
         android:gravity="center"
         android:text="texte :"
         android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titre" />
 
     <TextView
         android:id="@+id/textView2"
@@ -66,27 +64,24 @@
         android:id="@+id/transbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="30dp"
         android:text="chiffrement"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/transfix" />
 
     <Button
         android:id="@+id/transbtun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="40dp"
         android:text="dechiffrement"
         app:layout_constraintStart_toEndOf="@+id/transbt"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/transfix" />
 
     <TableLayout
         android:id="@+id/transtable"
         android:layout_width="361dp"
         android:layout_height="411dp"
-        android:layout_marginTop="50dp"
         android:layout_marginStart="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

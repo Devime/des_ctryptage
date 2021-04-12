@@ -39,8 +39,8 @@
 
     <EditText
         android:id="@+id/cesartxout"
-        android:layout_width="330dp"
-        android:layout_height="268dp"
+        android:layout_width="340dp"
+        android:layout_height="98dp"
         android:textSize="23sp"
         app:layout_constraintRight_toRightOf="@+id/cesartxin"
         app:layout_constraintTop_toBottomOf="@id/cesarBtcrypter" />

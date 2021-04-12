@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Polybe">
+    tools:context=".Polybe"
+    android:background="@drawable/hdpi">
 
     <TextView
         android:id="@+id/polytitre"
@@ -35,41 +36,37 @@
         android:id="@+id/polytx"
         android:layout_width="127dp"
         android:layout_height="45dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginLeft="30dp"
         android:gravity="center"
         android:text="texte :"
         android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/polytitre"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
 
     <Button
         android:id="@+id/polyfrbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="19dp"
         android:text="chiffrement"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/polyofix" />
+        app:layout_constraintTop_toBottomOf="@+id/polyout"
+        app:layout_constraintLeft_toLeftOf="@id/polyofix" />
 
     <Button
         android:id="@+id/polyfrbtun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="19dp"
         android:text="dechiffrement"
-        app:layout_constraintStart_toEndOf="@+id/polyfrbt"
-        app:layout_constraintTop_toBottomOf="@+id/polyout" />
+
+        app:layout_constraintTop_toBottomOf="@+id/polyout"
+        app:layout_constraintRight_toRightOf="@id/polyout"/>
 
     <TableLayout
         android:id="@+id/polytable"
-        android:layout_width="361dp"
+        android:layout_width="350dp"
         android:layout_height="411dp"
         android:layout_marginStart="28dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/polyfrbtun"
         app:layout_constraintStart_toStartOf="parent">
 
     </TableLayout>
@@ -100,20 +97,17 @@
         android:id="@+id/polybtdef"
         android:layout_width="153dp"
         android:layout_height="41dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="4dp"
         android:text="default"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/polyin" />
+        app:layout_constraintTop_toBottomOf="@+id/polyin"
+        app:layout_constraintLeft_toLeftOf="@id/polytx"
+        />
 
     <Button
         android:id="@+id/polybtrand"
         android:layout_width="153dp"
         android:layout_height="41dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="55dp"
         android:text="Random"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/polyin" />
+        app:layout_constraintTop_toBottomOf="@+id/polyin"
+        app:layout_constraintRight_toRightOf="@id/polyin"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
