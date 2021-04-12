@@ -31,9 +31,11 @@ On affiche les tableaux servant au chiffrement.
 
 Carré de Polybe 6x6 codé en dure de a à z et 0 à 9.
 On l'affiche.
+Il est egalement possible de créer un carre remplis aleatoirement( c'est plutot un remplis normalement et on intervertie les élèments aleatoirement dedans)
 
 ### Delastelle
 
-On utilise un carré créé par l'activité Polybe et on fait le surchiffrement. Il faut juste entrer un entier en tant que clef.
+On utilise un carré créé par l'activité Polybe( ou un carré aléatoire graçe au boutton) et on fait le surchiffrement. Il faut juste entrer un entier en tant que clef.
+On affiche le carre de polybe utiliser.
 
 
