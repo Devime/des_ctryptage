@@ -11,7 +11,6 @@ class Transpositionrect : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_transpositionrect)
 
-        var tableLayout: TableLayout = findViewById(R.id.transtable)
 
         val btdo: Button = findViewById(R.id.transbt)
         val keytxt: EditText = findViewById(R.id.transkey)
@@ -32,8 +31,7 @@ class Transpositionrect : AppCompatActivity() {
     }
 
     private fun chiffrement(tab: Array<Array<String>>, col: Int, line: Int): String {
-        var sb: StringBuilder = StringBuilder()
-        var ind = 1
+        val sb = StringBuilder()
         var ref = 1
         for (i in 0 until col) {
             while (tab[ref][1] != (i + 1).toString()) {
@@ -42,14 +40,12 @@ class Transpositionrect : AppCompatActivity() {
             for (j in 2 until line) {
                 if (tab[ref][j] != "Xx") {
                     sb.append(tab[ref][j])
-                    //println(sb.toString())
                 } else {
                     ref--
                 }
             }
             ref = 0
         }
-        println("sout len : " + sb.length)
         return sb.toString()
     }
 
@@ -57,25 +53,22 @@ class Transpositionrect : AppCompatActivity() {
 
         val col = key.length
         val line = (txt.length / key.length) + 3
-        println("col = $col & line = $line")
         val plus = txt.length % col
 
-        println("line = $line et plus = $plus")
         val tab: Array<Array<String>> = Array(col) { Array(line) { " " } }
         val nbline = line - 3
-        println("col : $col , line : $line , plus : $plus , nbline : $line , lenght : " + txt.length)
 
+        //on remplis la première ligne avec la clef
         for (i in 0 until col) {
             tab[i][0] = key[i].toString()
             tab[i][1] = "0"
         }
+        //on trie la clef pour avoir l'odre du dechiffrement qu'on met en 2iem ligne
         val sorted = key.toSortedSet().toString()
-        println(sorted)
         var p = 1
         var mem = 0
         for (i in sorted.indices) {
             for (j in 0 until col) {
-                //println(tab[j][0]+"-->"+sorted[i])
                 if (tab[j][0] == sorted[i].toString() && tab[j][1] == "0") {
                     tab[j][1] = (p).toString()
                     p++
@@ -94,8 +87,8 @@ class Transpositionrect : AppCompatActivity() {
                 }
             }
         }
+
         for (i in plus until col) {
-            println("->$i----------")
             tab[i][line - 1] = "Xx"
         }
 
@@ -103,11 +96,12 @@ class Transpositionrect : AppCompatActivity() {
         return dechiffrement(tab, col, line)
     }
 
-    private fun dechiffrement(tab: Array<Array<String>>, col: Int, line: Int): String {
-        val sb: StringBuilder = StringBuilder()
+    //on parcours le tableau et on a le texte
+    private fun dechiffrement( tab: Array<Array<String>>, col: Int, line: Int): String {
+        val sb = StringBuilder()
         var c = 0
         var l = 2
-        while (tab[c][l].toString() != "Xx" || (c == (col - 1) && l == (line - 1))) {
+        while (tab[c][l] != "Xx" || (c == (col - 1) && l == (line - 1))) {
             sb.append(tab[c][l])
             c++
             if (c == col) {
@@ -124,7 +118,6 @@ class Transpositionrect : AppCompatActivity() {
 
         val col = key.length
         var line = (txt.length / key.length) + 2
-        //println("col = $col & line = $line  et l : " + txt.length)
         if (txt.length % col != 0) line++
         val tab: Array<Array<String>> = Array(col) { Array(line) { " " } }
         for (i in 0 until col) {

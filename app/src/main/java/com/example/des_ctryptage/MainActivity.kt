@@ -7,6 +7,8 @@ import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        //rien de spécial que des boutons
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val btsym: Button = findViewById<Button>(R.id.B1sym)

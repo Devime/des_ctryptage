@@ -24,6 +24,7 @@ class Hill : AppCompatActivity() {
         val decrypter: Button = findViewById(R.id.decoder)
 
         crypter.setOnClickListener {
+            //on verifie que notre matrice est bien inversible modulo 95
             if (!check(
                     a.text.toString(),
                     b.text.toString(),
@@ -56,7 +57,7 @@ class Hill : AppCompatActivity() {
                     d.text.toString()
                 )
             ) {
-                println("NON")
+                //petit toast pour dire que la matrice ne convient pas
                 val toast =
                     Toast.makeText(applicationContext, "matrice non valide", Toast.LENGTH_LONG)
                 toast.show()
@@ -74,10 +75,13 @@ class Hill : AppCompatActivity() {
         }
     }
 
+    //on applique la formule du chiffrement de hill
     private fun chiffrement(a: String, b: String, c: String, d: String, textentre: String): String {
         var couple: Array<String>
         val sb: StringBuilder = StringBuilder()
         var i = 0
+        //on separe en couple de 2 elements , si le dernier est seul on ajoute un estpace avant le
+        // chiffrement
         do {
 
             couple = if (i == (textentre.length - 1)) {
@@ -89,7 +93,7 @@ class Hill : AppCompatActivity() {
                 ).toTypedArray()
             }
 
-            println("i = $i -> ${couple[0]},${couple[1]} ")
+            //on fais les calculs et on ajoute le resultat a notre stringbuilder
 
             val newCouple = appliqueMatrice(couple, a, b, c, d)
             sb.append(newCouple[0])
@@ -100,17 +104,19 @@ class Hill : AppCompatActivity() {
 
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
+    @RequiresApi(Build.VERSION_CODES.N)//pour le math.floorMod qui fais les calculs modulo
+    // sans ça j'ai des résultats faux
+
     private fun dechiffremnt(a: String, b: String, c: String, d: String, txt: String): String {
         val deter: Int = valueOf(a) * valueOf(d) - valueOf(b) * valueOf(c)
-        println(deter)
+        //on calcule l'inverse du determinant pr la matrice de dechiffrement
         val invers = inv(deter, 95)
         val newa: Int = valueOf(a) * invers
         val newb: Int = valueOf(b) * invers
         val newc: Int = valueOf(c) * invers
         val newd: Int = valueOf(d) * invers
 
-
+        //comme en haut on sépare on fais les calculs et on ajoute au stringbuilder
         var couple: Array<String>
         val sb: StringBuilder = StringBuilder()
         var i = 0
@@ -122,7 +128,6 @@ class Hill : AppCompatActivity() {
                 listOf<String>(txt[i].toString(), txt[i + 1].toString()).toTypedArray()
             }
 
-            println("i = $i -> ${couple[0]},${couple[1]} ")
 
             val newCouple = appliqueMatrice2(couple, newa, newb, newc, newd)
             sb.append(newCouple[0])
@@ -133,6 +138,7 @@ class Hill : AppCompatActivity() {
         return sb.toString()
     }
 
+    //2 a cause de % qui bug en déchiffrement
     @RequiresApi(Build.VERSION_CODES.N)
     private fun appliqueMatrice2(
         couple: Array<String>,
@@ -142,43 +148,31 @@ class Hill : AppCompatActivity() {
         d: Int
     ): Array<String> {
         val newcouple: Array<String>
-        //println("-----------------------")
-        couple.forEach {
-            print(it)
-        }
+
         var rangx1 = couple[0].toCharArray()[0].toInt()
-        //println("\n $rangx1")
         rangx1 -= 32
         var rangx2 = couple[1].toCharArray()[0].toInt()
-        //println(rangx2)
         rangx2 -= 32
-        val y1 = Math.floorMod(((d * rangx1) - (b * rangx2)) , 95) + 32
-        val y11 = d*rangx1
-        val y12 = b*rangx2
-        val y111 = y11 - y12
-        val y2 = Math.floorMod((a * rangx2 - c * rangx1) , 95) + 32
-        //println(" $y11 - $y12 = $y111 ->${Math.floorMod(y111,95)}")
-        //println("y1 = $y1  y2 = $y2")
-        //println("-----------------------")
+        val y1 = Math.floorMod(((d * rangx1) - (b * rangx2)), 95) + 32
+
+        val y2 = Math.floorMod((a * rangx2 - c * rangx1), 95) + 32
+
 
         newcouple = listOf<String>(y1.toChar().toString(), y2.toChar().toString()).toTypedArray()
         return newcouple
     }
 
-    private fun mod(a: Int, invers: Int): Int {
-        println("a : $a   -> " + a * invers + " -> " + (a * invers) % 95)
-        return (a * invers) % 95
-    }
 
+    //calcul l'inverse de x modulo i
     private fun inv(x: Int, i: Int): Int {
         var j = 0
         do {
             j++
-            println("" + x * j + "->j = $j  - " + (x * j) % i)
         } while (((x * j) % i != 1) || (j == i))
         return j
     }
 
+    //on applique les calculs
     private fun appliqueMatrice(
         couple: Array<String>,
         a: String,

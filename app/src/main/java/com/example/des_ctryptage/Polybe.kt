@@ -12,6 +12,7 @@ class Polybe : AppCompatActivity() {
 
     var carre: Array<Array<String>> = Array(6) { Array(6) { " " } }
 
+    //on remplis un carre de a a z et de 0 a 9
     fun fill() {
         var x = 97
         for (i in 0 until 6) {
@@ -26,6 +27,8 @@ class Polybe : AppCompatActivity() {
             }
         }
     }
+
+    //on intervertie des elements aleatoirement
     fun random(){
         var random : Int
         var temp : String
@@ -87,8 +90,10 @@ class Polybe : AppCompatActivity() {
 
     }
 
+
+    //on prends simplement les coordonnees des elelement
     fun chiffrement(txt: String): String {
-        val sb: StringBuilder = StringBuilder()
+        val sb = StringBuilder()
 
         txt.forEach {
             sb.append(find((it.toString())))
@@ -98,16 +103,14 @@ class Polybe : AppCompatActivity() {
     }
 
 
+    //on parcours le tableau jusqu'a trouver notre element
     fun find(egg: String): String {
         val s = StringBuilder()
         var i = 0
         var j = 0
-        println("----------------------searching : $egg")
         while (carre[i][j] != egg) {
-            //println("j=$j i=$i ->[$egg] ?= [${carre[i][j]}]")
             i++
             if (i == 6) {
-
                 j++
                 i = 0
             }
@@ -121,6 +124,7 @@ class Polybe : AppCompatActivity() {
         return s.toString()
     }
 
+    //on affiche l'elments grace aux coordonnées
     fun dechiffrement(txt:String):String{
         val sb = StringBuilder()
         var i=0

@@ -11,47 +11,42 @@ class Atbash : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_atbash)
 
-        var Btchiffrement = findViewById<Button>(R.id.atbashBtchiff)
-        var Btdechiffrement = findViewById<Button>(R.id.atbashBtdechif)
-        var txtin = findViewById<EditText>(R.id.atbashtxin)
-        var txtout = findViewById<TextView>(R.id.atbashtxout)
+        val Btchiffrement = findViewById<Button>(R.id.atbashBtchiff)
+        val Btdechiffrement = findViewById<Button>(R.id.atbashBtdechif)
+        val txtin = findViewById<EditText>(R.id.atbashtxin)
+        val txtout = findViewById<TextView>(R.id.atbashtxout)
 
 
 
         Btchiffrement.setOnClickListener {
-            var out = chiffrement(txtin.text.toString())
+            val out = chiffrement(txtin.text.toString())
             println(txtin.text.toString())
             txtout.text = out
         }
 
         Btdechiffrement.setOnClickListener {
-            var out = dechiffrement(txtin.text.toString())
+            val out = dechiffrement(txtin.text.toString())
             println(txtin.text.toString())
             txtout.text = out
         }
 
     }
 
+    //on prends en entree un string et pour caque element on prends son rang opposer dans tous les caractère affichable
     private fun chiffrement(txt: String): String {
-        val out = ""
-        var c: Int = 0
+        var c = 0
         val sb = StringBuilder()
-
         for (i in txt.indices) {
-            if (!txt[i].equals(" "))
-                println(txt[i])
-            c = txt[i].toByte().toInt()
-            println("******************************$c")
-            c = (126 - c )+32
-            println("******************************$c")
+            //if (!txt[i].equals(" "))
+            txt[i].toByte().toInt().also { c = it }
+            c = (126 - c) + 32
             val char = c.toChar().toString()
             sb.append(char)
-            println("=======================$char")
-            println("-----------------${sb.toString()}")
         }
         return sb.toString()
     }
 
+    //sa reviens au même
     private fun dechiffrement(txt: String): String {
         return chiffrement(txt)
     }
