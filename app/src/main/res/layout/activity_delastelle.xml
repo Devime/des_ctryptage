@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="cursive"
-        android:text="Delastelle"
+        android:text="@string/delastelle"
         android:textSize="60sp"
         android:textColor="@color/purple_500"
         app:layout_constraintBottom_toTopOf="@id/delin"
@@ -28,15 +28,17 @@
         android:inputType="text"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/titre"
-        app:layout_constraintLeft_toRightOf="@id/deltx"/>
+        app:layout_constraintLeft_toRightOf="@id/deltx"
+        android:importantForAutofill="no"
+        android:hint="@string/texte_a_chiffrer"/>
 
     <TextView
         android:id="@+id/deltx"
         android:layout_width="127dp"
         android:layout_height="45dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
         android:gravity="center"
-        android:text="texte :"
+        android:text="@string/texte"
         android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@id/titre"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -48,7 +50,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="30dp"
         android:gravity="center"
-        android:text="clef : "
+        android:text="@string/clef"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/deltx" />
 
@@ -61,14 +63,15 @@
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/delin"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:hint="@string/clef"/>
 
     <Button
         android:id="@+id/delbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
-        android:text="chiffrement"
+        android:text="@string/chiffrement"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/delfix" />
 
@@ -77,7 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
-        android:text="dechiffrement"
+        android:text="@string/dechiffrement"
         app:layout_constraintStart_toEndOf="@+id/delbt"
         app:layout_constraintTop_toBottomOf="@+id/delfix" />
 
@@ -97,7 +100,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="30dp"
         android:gravity="center"
-        android:text="texte caché"
+        android:text="@string/texte_cach"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -109,13 +112,15 @@
         android:inputType="text"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/delfix"
-        app:layout_constraintTop_toBottomOf="@+id/delkey" />
+        app:layout_constraintTop_toBottomOf="@+id/delkey"
+        android:importantForAutofill="no"
+        android:hint="@string/texte_dechiffrer"/>
 
     <Button
         android:id="@+id/delrand"
         android:layout_width="205dp"
         android:layout_height="51dp"
-        android:text="make random polybe"
+        android:text="@string/make_random_polybe"
         app:layout_constraintLeft_toRightOf="@id/delbt"
         app:layout_constraintRight_toLeftOf="@id/delbtun"
         app:layout_constraintTop_toBottomOf="@+id/delbt" />

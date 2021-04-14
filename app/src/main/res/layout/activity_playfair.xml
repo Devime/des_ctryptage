@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="cursive"
-        android:text="Payfair"
+        android:text="@string/playfair"
         android:textSize="60sp"
         android:textColor="@color/purple_500"
         app:layout_constraintBottom_toTopOf="@id/playin"
@@ -25,17 +25,19 @@
         android:layout_width="211dp"
         android:layout_height="45dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="text"
         app:layout_constraintStart_toEndOf="@+id/playtx"
-        app:layout_constraintTop_toBottomOf="@id/titre" />
+        app:layout_constraintTop_toBottomOf="@id/titre"
+        android:importantForAutofill="no"
+        android:hint="@string/texte_a_chiffrer"/>
 
     <TextView
         android:id="@+id/playtx"
         android:layout_width="127dp"
         android:layout_height="45dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
         android:gravity="center"
-        android:text="texte :"
+        android:text="@string/texte"
         android:textAlignment="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titre" />
@@ -46,7 +48,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="30dp"
         android:gravity="center"
-        android:text="clef : "
+        android:text="@string/clef"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playtx" />
 
@@ -55,19 +57,19 @@
         android:layout_width="211dp"
         android:layout_height="45dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/playin"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:hint="@string/clef"/>
 
     <Button
         android:id="@+id/playfrbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
-
-        android:text="chiffrement"
+        android:text="@string/chiffrement"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playofix" />
 
@@ -76,7 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
-        android:text="dechiffrement"
+        android:text="@string/dechiffrement"
         app:layout_constraintStart_toEndOf="@+id/playfrbt"
         app:layout_constraintTop_toBottomOf="@+id/playofix" />
 
@@ -97,7 +99,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="30dp"
         android:gravity="center"
-        android:text="texte caché"
+        android:text="@string/texte_cach"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -109,7 +111,9 @@
         android:inputType="text"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/playofix"
-        app:layout_constraintTop_toBottomOf="@+id/playfrkey" />
+        app:layout_constraintTop_toBottomOf="@+id/playfrkey"
+        android:importantForAutofill="no"
+        android:hint="@string/texte_dechiffrer"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

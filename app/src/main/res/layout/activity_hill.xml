@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -11,18 +10,20 @@
         android:layout_width="269dp"
         android:layout_height="63dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:inputType="text"
+        android:text="@string/texte_a_chiffrer"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/titre"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:importantForAutofill="no"
+        android:hint="@string/texte_a_chiffrer"/>
 
     <Button
         android:id="@+id/encoder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="encoder"
+        android:text="@string/chiffrement"
         app:layout_constraintTop_toBottomOf="@id/textbase"
         app:layout_constraintLeft_toLeftOf="@id/textbase"
         app:layout_constraintRight_toLeftOf="@id/decoder" />
@@ -31,7 +32,7 @@
         android:id="@+id/decoder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Décoder"
+        android:text="@string/dechiffrement"
         app:layout_constraintTop_toBottomOf="@id/textbase"
         app:layout_constraintRight_toRightOf="@id/textbase"
         app:layout_constraintLeft_toRightOf="@id/encoder"/>
@@ -43,11 +44,13 @@
         android:layout_height="48dp"
         android:ems="10"
         android:inputType="number"
-        android:text="a"
+        android:text="@string/a"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@id/c"
         app:layout_constraintLeft_toLeftOf="@id/encoder"
-        app:layout_constraintTop_toBottomOf="@id/encoder" />
+        app:layout_constraintTop_toBottomOf="@id/encoder"
+        android:importantForAutofill="no"
+        android:hint="@string/a" />
 
 
     <EditText
@@ -56,12 +59,14 @@
         android:layout_height="46dp"
         android:ems="10"
         android:inputType="number"
-        android:text="b"
+        android:text="@string/b"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@id/d"
         app:layout_constraintLeft_toRightOf="@id/a"
         app:layout_constraintRight_toRightOf="@id/decoder"
-        app:layout_constraintTop_toBottomOf="@id/decoder" />
+        app:layout_constraintTop_toBottomOf="@id/decoder"
+        android:importantForAutofill="no"
+        android:hint="@string/b"/>
 
     <EditText
         android:id="@+id/c"
@@ -69,11 +74,13 @@
         android:layout_height="48dp"
         android:ems="10"
         android:inputType="number"
-        android:text="c"
+        android:text="@string/c"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@id/textsortie"
         app:layout_constraintLeft_toLeftOf="@id/a"
-        app:layout_constraintTop_toBottomOf="@id/a" />
+        app:layout_constraintTop_toBottomOf="@id/a"
+        android:importantForAutofill="no"
+        android:hint="@string/c"/>
 
     <EditText
         android:id="@+id/d"
@@ -81,11 +88,13 @@
         android:layout_height="49dp"
         android:ems="10"
         android:inputType="number"
-        android:text="d"
+        android:text="@string/d"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@id/textsortie"
         app:layout_constraintLeft_toLeftOf="@id/b"
-        app:layout_constraintTop_toBottomOf="@id/b" />
+        app:layout_constraintTop_toBottomOf="@id/b"
+        android:importantForAutofill="no"
+        android:hint="@string/d"/>
 
     <EditText
         android:id="@+id/textsortie"
@@ -94,19 +103,20 @@
         android:layout_marginTop="96dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text=""
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/a"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        />
+        android:importantForAutofill="no"
+        android:hint="@string/texte_dechiffrer"/>
 
     <TextView
         android:id="@+id/titre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="cursive"
-        android:text="Hill  "
+        android:text="@string/hill"
         android:textSize="60sp"
         android:textColor="@color/purple_500"
         app:layout_constraintBottom_toTopOf="@id/textbase"

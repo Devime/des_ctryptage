@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="cursive"
-        android:text="César"
+        android:text="@string/c_sar"
         android:textSize="60sp"
         android:textColor="@color/purple_500"
         app:layout_constraintBottom_toTopOf="@id/cesartxin"
@@ -25,7 +25,7 @@
         android:id="@+id/cesarBtcrypter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="crypter"
+        android:text="@string/crypter"
         app:layout_constraintLeft_toLeftOf="@+id/cesartxin"
         app:layout_constraintTop_toBottomOf="@+id/cesartxin" />
 
@@ -33,7 +33,7 @@
         android:id="@+id/cesarBtdecrypter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="decrypter"
+        android:text="@string/decrypter"
         app:layout_constraintRight_toRightOf="@+id/cesartxin"
         app:layout_constraintTop_toBottomOf="@+id/cesartxin"/>
 
@@ -43,7 +43,10 @@
         android:layout_height="98dp"
         android:textSize="23sp"
         app:layout_constraintRight_toRightOf="@+id/cesartxin"
-        app:layout_constraintTop_toBottomOf="@id/cesarBtcrypter" />
+        app:layout_constraintTop_toBottomOf="@id/cesarBtcrypter"
+        android:importantForAutofill="no"
+        android:hint="@string/texte_dechiffrer"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/cesartxin"
@@ -52,11 +55,13 @@
         android:layout_marginTop="100dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="@string/texte_a_chiffrer"
+        android:hint="@string/texte_a_chiffrer"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

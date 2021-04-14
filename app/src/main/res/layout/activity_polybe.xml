@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="cursive"
-        android:text="Polybe"
+        android:text="@string/polybe"
         android:textSize="60sp"
         android:layout_marginTop="20dp"
         android:textColor="@color/purple_500"
@@ -30,15 +30,17 @@
         android:inputType="textPersonName"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/polytx"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no"
+        android:hint="@string/texte_a_chiffrer"/>
 
     <TextView
         android:id="@+id/polytx"
         android:layout_width="127dp"
         android:layout_height="45dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
         android:gravity="center"
-        android:text="texte :"
+        android:text="@string/texte"
         android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@id/polytitre"
         app:layout_constraintLeft_toLeftOf="parent"/>
@@ -48,7 +50,7 @@
         android:id="@+id/polyfrbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="chiffrement"
+        android:text="@string/chiffrement"
         app:layout_constraintTop_toBottomOf="@+id/polyout"
         app:layout_constraintLeft_toLeftOf="@id/polyofix" />
 
@@ -56,7 +58,7 @@
         android:id="@+id/polyfrbtun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="dechiffrement"
+        android:text="@string/dechiffrement"
 
         app:layout_constraintTop_toBottomOf="@+id/polyout"
         app:layout_constraintRight_toRightOf="@id/polyout"/>
@@ -78,7 +80,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="45dp"
         android:gravity="center"
-        android:text="texte caché"
+        android:text="@string/texte_a_chiffrer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/polytx" />
 
@@ -88,16 +90,18 @@
         android:layout_height="45dp"
         android:layout_marginTop="45dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/polyofix"
-        app:layout_constraintTop_toBottomOf="@+id/polyin" />
+        app:layout_constraintTop_toBottomOf="@+id/polyin"
+        android:importantForAutofill="no"
+        android:hint="@string/texte_dechiffrer"/>
 
     <Button
         android:id="@+id/polybtdef"
         android:layout_width="153dp"
         android:layout_height="41dp"
-        android:text="default"
+        android:text="@string/defaul"
         app:layout_constraintTop_toBottomOf="@+id/polyin"
         app:layout_constraintLeft_toLeftOf="@id/polytx"
         />
@@ -106,7 +110,7 @@
         android:id="@+id/polybtrand"
         android:layout_width="153dp"
         android:layout_height="41dp"
-        android:text="Random"
+        android:text="@string/random"
         app:layout_constraintTop_toBottomOf="@+id/polyin"
         app:layout_constraintRight_toRightOf="@id/polyin"/>
 
